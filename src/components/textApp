@@ -6,8 +6,7 @@ const App = () => {
   const[value, setValue] = React.useState('');
   const[checkedValue, setCheckedValue] = React.useState('');
   const[checkedValueArr, setCheckedValueArr] = React.useState('');
-  const[resultArr, setResultArr] = React.useState([]);
-  const[finish, setFinish] = React.useState([])
+  const[resultCommentsArr, setResultCommentArr] = React.useState('');
 
   const handleSubmit =(e) => {
     e.preventDefault();
@@ -16,22 +15,19 @@ const App = () => {
     console.log(checkedValue);
     
     setCheckedValueArr([...checkedValueArr, checkedValue]);
-
-   
-   
-    console.log(JSON.stringify(checkedValueArr));
-    let newArr= JSON.stringify(checkedValueArr);
-    let newArrArr = newArr.split(" ");
-    console.log(newArrArr);
     console.log(checkedValueArr.length)
 
-    let resultArr = JSON.parse(newArrArr);
-    console.log(resultArr);
+   
+    console.log(JSON.stringify(checkedValueArr));
+    let strCheckedValueArr= JSON.stringify(checkedValueArr).split(" ");
+    //let newArrArr = newArr.split(" ");
+    console.log(strCheckedValueArr);
 
-    setFinish(resultArr.map((item) => <li> {item} </li> ));
-
+    let resultCommentsArr = JSON.parse(strCheckedValueArr);
+    console.log(resultCommentsArr);
 
     setValue('');
+
 
 
     // setShowResult(showResult = checkedValueArr.forEach(element => {
@@ -39,6 +35,11 @@ const App = () => {
     // }));
     // console.log(showResult)
     
+
+    
+
+
+
 
     // setCheckedValueArr(checkedValueArr.forEach(element => {
     //   console.log(element)
@@ -52,6 +53,7 @@ const App = () => {
     //console.log(e.target.value)
   };
 
+
   return (
 
     <div className="form__container">
@@ -60,19 +62,13 @@ const App = () => {
       
       <div className='form__comments'>{checkedValue}</div>
 
-      <div className='form__comments_before'>
-        {finish}
-      {/* {resultArr.map((item) => <li> {item} </li> )} */}
-      </div>
+      {/* <div className='form__comments_before'>{checkedValueArr.map((item, index) => <div key = {index}>{item}</div>)}</div> */}
 
-     
-
-      {/* <div className='form__comments_before'>{resultArr.forEach(element => {
-        // document.write(element + '<br>')
-        console.log(element + ' ')
+      {/* <div className='form__comments_before'>{checkedValueArr.forEach(element => {
+        document.write(element + '<br>')
       }) }</div> */}
 
-      <div className='form__comments_before'>{resultArr}</div>  
+      <div className='form__comments_before'>{resultCommentsArr}</div>  
       
       <div className='form__activepart'>
 

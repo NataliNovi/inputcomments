@@ -1,0 +1,83 @@
+.form {
+
+&__container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: rgb(195, 195, 239);
+  align-items: center;
+  height: 60vh;
+
+}
+
+&__text_top {
+width: 96%;
+border-radius: 10px;
+text-align:start;
+font-size: 1.5rem;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 10px;
+margin-top: 2vh;
+margin-bottom: 0vh;
+height: 5vh;
+background: white;
+font-size: 2rem;
+}
+
+&__comments {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 94%;
+  height: 10vh;
+  border-radius: 10px;
+  text-align:start;
+  font-size: 1.5rem;
+  padding-left: 40px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-top: 1vh;
+}
+
+&__comments_before {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 50vh;
+  border-radius: 10px;
+  text-align:start;
+  font-size: 1.5rem;
+  padding-left: 40px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-top: 1vh;
+}
+
+&__textarea {
+  width: 96vw;
+  height: 10vh;
+  border-radius: 10px;
+  text-align:start;
+  font-size: 1.5rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-top: 1vh;
+  margin-left: 1vw;
+}
+
+&__input {
+  width: 98vw;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  margin-left: 1vw;
+  height: 5vh;
+  color: white;
+  background: rgb(106, 106, 235);
+  border-radius: 10px;
+  font-size: 2rem;
+}
+}
+
+
