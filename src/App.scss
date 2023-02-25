@@ -41,8 +41,10 @@ font-size: 2rem;
 }
 
 &__comments_before {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  /* flex-direction: row; */
+  
+  grid-template-rows: auto;
   width: 100vw;
   height: 50vh;
   border-radius: 10px;

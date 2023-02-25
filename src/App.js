@@ -7,33 +7,41 @@ const App = () => {
   const[checkedValue, setCheckedValue] = React.useState('');
   const[checkedValueArr, setCheckedValueArr] = React.useState('');
   const[resultArr, setResultArr] = React.useState([]);
-  const[finish, setFinish] = React.useState([])
+  const[finish, setFinish] = React.useState([]);
+
+  const handleChange = (e) => {
+    
+    setValue(e.target.value);
+    //console.log(e.target.value)
+  };
 
   const handleSubmit =(e) => {
     e.preventDefault();
     setCheckedValue(checkedValue => value.replace(/viagra|виагра|виагру|виагрой|xxx/gi, '***'));
-
-    console.log(checkedValue);
-    
     setCheckedValueArr([...checkedValueArr, checkedValue]);
-
+    console.log(checkedValue);
    
-   
-    console.log(JSON.stringify(checkedValueArr));
-    let newArr= JSON.stringify(checkedValueArr);
-    let newArrArr = newArr.split(" ");
-    console.log(newArrArr);
-    console.log(checkedValueArr.length)
-
-    let resultArr = JSON.parse(newArrArr);
-    console.log(resultArr);
-
-    setFinish(resultArr.map((item) => <li> {item} </li> ));
+    //console.log(checkedValueArr.join("<br>"));
 
 
+    //setCheckedValueArr([...checkedValueArr, {checkedValue: value.replace(/viagra|виагра|виагру|виагрой|xxx/gi, '***')}]);
+    
     setValue('');
 
+    //setFinish(checkedValueArr.map((item, i) => <div key={i}> {item + ","} </div> ));
+    //setResultArr(checkedValueArr.map((item, i) => <div key={i}> {item + " "} </div> ));
+   
+    
+    // console.log(JSON.stringify(checkedValueArr));
+    // let newArr= JSON.stringify(checkedValueArr);
+    // let newArrArr = newArr.split(" ");
+    // console.log(newArrArr);
+    // console.log(checkedValueArr.length)
 
+    // let resultArr = JSON.parse(newArrArr);
+    // console.log(resultArr);
+
+  
     // setShowResult(showResult = checkedValueArr.forEach(element => {
     //   document.write(element + '<br>')
     // }));
@@ -46,11 +54,7 @@ const App = () => {
     //console.log(checkedValueArr.lenght);
 
   }
-  const handleChange = (e) => {
-    
-    setValue(e.target.value);
-    //console.log(e.target.value)
-  };
+
 
   return (
 
@@ -61,7 +65,8 @@ const App = () => {
       <div className='form__comments'>{checkedValue}</div>
 
       <div className='form__comments_before'>
-        {finish}
+        {/* {resultArr} */}
+        {checkedValueArr}
       {/* {resultArr.map((item) => <li> {item} </li> )} */}
       </div>
 
@@ -72,7 +77,7 @@ const App = () => {
         console.log(element + ' ')
       }) }</div> */}
 
-      <div className='form__comments_before'>{resultArr}</div>  
+      {/* <div className='form__comments_before'>{checkedValue} {finish}</div>   */}
       
       <div className='form__activepart'>
 
