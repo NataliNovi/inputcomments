@@ -1,9 +1,16 @@
 import React from 'react'
 
-export default function Comments() {
+export default function Comments(props) {
+  console.log(props)
 
     
   return (
-    <div>Comments</div>
+    <div className='form__comments_before'>
+      
+
+    {/* {result} */}
+
+  </div>
+
   )
 }

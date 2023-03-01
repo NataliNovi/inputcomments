@@ -31,23 +31,23 @@ const App = () => {
 
   return (
 
-    <div className="form form__container">
+    <div className="form__container">
 
-    <div className="form form__text_top">Hello, how are you?</div> 
+    <div className="form__text_top">Hello, how are you?</div> 
       
-   
-    <div class = "form form__checked-value" >{checkedValue} </div>
+      <div className='form__comments'>{checkedValue}</div>
+      
 
-      <div className='form form__comments_before'>
-
+      <div className='form__comments_before'>
+       
         {checkedValueArr.map((message)=> <div key={message}>{message}</div>)}
       
       </div>
       
-      <div className='form form__activepart'>
+      <div className='form__activepart'>
 
       <form className="form__submit" onSubmit = {handleSubmit}>
-      <textarea className="form__textarea" placeholder = "input your messge" onChange={handleChange} value={value}/>
+      <textarea className="form__textarea" onChange={handleChange} value={value}/>
       <input className="form__input" type="submit" value = "submit"/>
       </form>
       </div>
