@@ -18,17 +18,11 @@ const App = () => {
 
   const handleSubmit =(e) => {
     e.preventDefault();
-    setCheckedValue(checkedValue => value.replace(/viagra|виагра|виагру|виагрой|xxx/gi, '***'));
+    setCheckedValue(value.replace(/viagra|виагра|виагру|виагрой|xxx/gi, '***'));
     setCheckedValueArr([...checkedValueArr, checkedValue]);
-
-    // console.log(value)
-    // console.log(checkedValue);
-    // console.log(checkedValueArr);
-   
     setValue('');
 
   }
-
 
   return (
 
